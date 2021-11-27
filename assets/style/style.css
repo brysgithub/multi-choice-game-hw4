@@ -1,0 +1,42 @@
+:root {
+    --primairy-color: #62929E;
+    --secondary-color: #4A6D7C;
+    --tertiary-color: #C6C5B9;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    display: flex;
+    background-color: var(--primairy-color);
+    align-items: center;
+    justify-content: space-around;
+    height: 2rem;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    /* box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px; */
+}
+
+footer {
+    background-color: var(--primairy-color);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 3px;
+    margin: 5px;
+}
+
+.background {
+    background-color: #4A6D7C;
+    height: auto;
+}
+
+.timer {
+     font-weight: bold;
+}
+
+.game-box {
+    background-color: var(--tertiary-color);
+    display: flex;
+}
