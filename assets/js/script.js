@@ -1,35 +1,69 @@
 // target needed elements 
 var startButtonEl = document.getElementById("start-btn");
 var timerEl = document.getElementById("timer")
-var questionBtn1El = document.getElementById("questionBtn1");
-var questionBtn2El = document.getElementById("questionBtn2");
-var questionBtn3El = document.getElementById("questionBtn3");
-var questionBtn4El = document.getElementById("questionBtn4");
+var questionHeading = document.getElementById("game-header");
+var questionText = document.getElementById("game-text");
+// var questionBtn1El = document.getElementById("questionBtn1");
+// var questionBtn2El = document.getElementById("questionBtn2");
+// var questionBtn3El = document.getElementById("questionBtn3");
+// var questionBtn4El = document.getElementById("questionBtn4");
+var questionBtn;
+var selectedQuestion;
 
 var timeLeft;
 
-var questionArray = {
-    question: "Question",
+// var highScores = [];
+
+var questionArray = [{
+    question: "Question1",
         multipleChoiceOptions: [
             "wrong1",
             "wrong2",
             "right",
             "wrong3",
         ],
-        correct: "alert",
-}
+        correct: "right",
+},
+{
+    question: "Question2",
+        multipleChoiceOptions: [
+            "wrong1",
+            "wrong2",
+            "right",
+            "wrong3",
+        ],
+        correct: "right",
+},
+{
+    question: "Question3",
+        multipleChoiceOptions: [
+            "wrong1",
+            "wrong2",
+            "right",
+            "wrong3",
+        ],
+        correct: "right",
+    }
+];
 
 // event listeners 
 startButtonEl.addEventListener("click", startGame);
 
-// functions of funcionality
+// build out listeners for question buttons
+
+// V functions of funcionality V
+
+// start button starting all tthe things
 function startGame () {
-    console.log("Game start!")
-    startTimer()
-    displayFirstQuestion()
+    console.log("Game start!");
+    startButtonEl.style.display = "none";
+    questionHeading.innerHTML = "";
+    questionText.innerHTML = "";
+    startTimer();
+    displayQuestion();
 };
 
-// starts timer
+// starts timer. crazy right?
 function startTimer () {
     console.log("Timer start!")
     
@@ -43,19 +77,35 @@ function startTimer () {
         timeLeft--;
     } else {
         timerEl.textContent = '';
-    // Use `clearInterval()` to stop the timer
+    
     clearInterval(timeInterval);
-    // Call the `displayMessage()` function
     endGame();
         }
-    }, 1000);
-      
+    }, 1000);    
 };
 
-function displayFirstQuestion () {
-    console.log("First question!")
+// call for loop to display question
+function displayQuestion () {
+    console.log("Display question!")
+
+    selectQuestion(questionArray);
+    // questionBtn.innerHTML = [0];
+
 };
 
-function endGame () {};
+// make for loop to sequentially select questions
+function selectQuestion (array) {
+    // var selectedQuestion;
+    for (let i = 0; i < array.length; i++) {
+        selectedQuestion = array[i];
+        
+    } return selectedQuestion;
+};
+
+function endGame () {
+    if (timeLeft === 0) {
+
+    }
+};
 
 // nameOfContainer.innertHTML = ""; to empty a string
