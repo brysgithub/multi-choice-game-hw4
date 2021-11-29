@@ -90,7 +90,7 @@ header {
 
 .question-btn {
     width: fit-content;
-    margin: 15px;
+    /* margin: 15px; */
     padding: 10px 15px;
     background-color: var(--primary-color);
     text-decoration: none;
