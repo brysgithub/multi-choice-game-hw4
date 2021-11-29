@@ -1,7 +1,7 @@
 # What starting data does my app need to run?
 
 - Questions and answers
-xt
+
 - Each question will be and object
     ```
     {
