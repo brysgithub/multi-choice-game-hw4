@@ -6,24 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style/reset.css">
     <link rel="stylesheet" href="./assets/style/style.css">
-    <title>Document</title>
+    <title>Multi-Choice Game!</title>
 </head>
 <body class="background">
     <header>
         <h1>Trivia Game</h1>
-        <h3 class="timer">Time left: 3:00 </h3>
+        <h3 id="timer">Time left (seconds): 180</h3>
     </header>
     
     <main>
         <section class="game-box">
-            <h2 class="game-header">Question</h2>
-            <p class="game-text">Game intro text: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex nisi velit quidem inventore nesciunt quibusdam reprehenderit. Fuga asperiores illo, autem laudantium dolorem magnam ipsam ex eligendi officiis ullam ab facilis?</p>
-            <button type="button" class="start-btn">Start!</button>
+            <h2 class="game-header">Quiz Game!</h2>
+            <p class="game-text">Welcome to Bryan's multiple choice quiz game! You will have 3 minutes to answer as many questions as you can. Correct answers move you on to the next question. Incorrect answers will incur a 10 second timer penalty. Good luck! </p>
+            <button type="button" id="start-btn">Start!</button>
         </section>
     </main>
 
     <footer>
-        <p>
+        <a id="score-link" href="#">
+            View Highscores
+        </a>
+        <p id="attribution">
             Created by Bryan Schenck 2021
         </p>
     </footer>

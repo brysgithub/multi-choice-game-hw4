@@ -17,11 +17,23 @@ header {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-footer {
+#attribution {
     background-color: var(--primary-color);
     position: fixed;
     bottom: 0;
     right: 0;
+    padding: 3px;
+    margin: 5px;
+    border: solid black 1px;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+#score-link {
+    background-color: var(--primary-color);
+    position: fixed;
+    bottom: 0;
+    left: 0;
     padding: 3px;
     margin: 5px;
     border: solid black 1px;
@@ -34,7 +46,7 @@ footer {
     height: auto;
 }
 
-.timer {
+#timer {
      font-weight: bold;
 }
 
@@ -61,7 +73,7 @@ footer {
     line-height: 1.5;
 }
 
-.start-btn {
+#start-btn {
     width: fit-content;
     margin: 15px;
     padding: 10px 100px;
