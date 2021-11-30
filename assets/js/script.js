@@ -14,15 +14,15 @@ var timeLeft;
 // var highScores = [];
 
 var questionArray = [{
-    question: "Question1",
-        questionTitle: ["question title"],
+    question: "In what year was Joan of Arc burnt at the stake?",
+        questionTitle: ["History"],
         multipleChoiceOptions: [
-            "wrong1",
-            "wrong2",
-            "right",
-            "wrong3",
+            "1441",
+            "1398",
+            "1431",
+            "1776",
         ],
-        correct: "right",
+        correct: "1431",
     }
 ];
 
