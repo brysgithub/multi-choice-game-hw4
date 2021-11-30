@@ -4,16 +4,10 @@ var timerEl = document.getElementById("timer");
 var gameBoxEl = document.getElementById("game-box");
 var questionHeadingEl = document.getElementById("game-header");
 var questionTextEl = document.getElementById("game-text");
-// var questionBtn1El = document.getElementById("questionBtn1");
-// var questionBtn2El = document.getElementById("questionBtn2");
-// var questionBtn3El = document.getElementById("questionBtn3");
-// var questionBtn4El = document.getElementById("questionBtn4");
-// var questionBtn;
+var hiddenBtnEl = document.getElementById("answer-btn");
+
+
 var selectedQuestion;
-// var questionBtn1
-// var questionBtn2
-// var questionBtn3
-// var questionBtn4
 
 var timeLeft;
 
@@ -29,48 +23,25 @@ var questionArray = [{
             "wrong3",
         ],
         correct: "right",
-},
-// {
-//     question: "Question2",
-//         multipleChoiceOptions: [
-//             "wrong1",
-//             "wrong2",
-//             "right",
-//             "wrong3",
-//         ],
-//         correct: "right",
-// },
-// {
-//     question: "Question3",
-//         multipleChoiceOptions: [
-//             "wrong1",
-//             "wrong2",
-//             "right",
-//             "wrong3",
-//         ],
-//         correct: "right",
-//     }
+    }
 ];
 
 // event listeners 
 startButtonEl.addEventListener("click", startGame);
-
-// build out listeners for question buttons
 
 // V functions of funcionality V
 
 // start button starting all the things
 function startGame () {
     console.log("Game start!");
-    startButtonEl.style.display = "none";
     questionHeadingEl.innerHTML = "";
     questionTextEl.innerHTML = "";
+    startButtonEl.classList.add("hide");
+    hiddenBtnEl.classList.remove("hide");
+    
     startTimer();
     displayQuestion();
 
-    // if (chosenAnswer === selectedQuestion.correct[0]) {
-    //     console.log("Correct!");
-    // }
 };
 
 // starts timer
@@ -86,15 +57,15 @@ function startTimer () {
         timerEl.textContent = 'Time left (seconds): ' + timeLeft;
         timeLeft--;
     } else {
-        timerEl.textContent = '';
+        timerEl.textContent = 'Time left (seconds): 0';
     
     clearInterval(timeInterval);
-    endGame();
         }
     }, 1000);    
 };
 
 // call for loop to display question
+// !IMPORTANT! implement question index pointer ++ to select the proper array to draw from
 function displayQuestion () {
     console.log("Display question!")
 
@@ -104,28 +75,25 @@ function displayQuestion () {
     questionHeadingEl.innerHTML = selectedQuestion.questionTitle;
     questionTextEl.innerHTML = selectedQuestion.question;
 
-    //add buttons - TODO loop single section to procedurally add buttons -
-    var questionBtn1 = document.createElement("button");
-    questionBtn1.className = "question-btn";
-    gameBoxEl.appendChild(questionBtn1);
-    questionBtn1.innerHTML = selectedQuestion.multipleChoiceOptions[0];
-
-    var questionBtn2 = document.createElement("button");
-    questionBtn2.className = "question-btn";
-    gameBoxEl.appendChild(questionBtn2);
-    questionBtn2.innerHTML = selectedQuestion.multipleChoiceOptions[1];
-
-    var questionBtn3 = document.createElement("button");
-    questionBtn3.className = "question-btn";
-    gameBoxEl.appendChild(questionBtn3);
-    questionBtn3.innerHTML = selectedQuestion.multipleChoiceOptions[2];
-
-    var questionBtn4 = document.createElement("button");
-    questionBtn4.className = "question-btn";
-    gameBoxEl.appendChild(questionBtn4);
-    questionBtn4.innerHTML = selectedQuestion.multipleChoiceOptions[3];
-
+    //add buttons - TODO loop single section to procedurally add buttons -!find way to grab answers length!
+    // for (let index = 0; index < questionArray.question.multipleChoiceOptions.length; index++) {
+        
+    //     var questionBtn = document.createElement("button");
+    //     questionBtn.className = "question-btn";
+    //     gameBoxEl.appendChild(questionBtn);
+    //     questionBtn.innerHTML = selectedQuestion.multipleChoiceOptions[index];
+    // }
 };
+
+// check answer
+// function checkAnswer(){
+
+    // if (chosenAnswer === selectedQuestion.correct[0]) {
+    //     console.log("Correct!");
+    // } else {
+    //     timeLeft - 10;
+    // };
+// };
 
 // make for loop to sequentially select questions
 function chooseQuestion (array) {
@@ -137,13 +105,13 @@ function chooseQuestion (array) {
 };
 
 // end game
-function displayScore (){};
+// function displayScore (){};
 
-function endGame () {
-    if (timeLeft === 0) {
-        console.log("Game Over!");
-        displayScore();
-    }
-};
+// function endGame () {
+    // if (timeLeft === 0) {
+    //     console.log("Game Over!");
+    //     displayScore();
+    // }
+// };
 
 // nameOfContainer.innertHTML = ""; to empty a string

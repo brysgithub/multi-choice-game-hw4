@@ -88,9 +88,14 @@ header {
     background-color: var(--secondary-color);
 }
 
+.btn-div {
+    display: flex;
+    flex-direction: column;
+}
+
 .question-btn {
+    margin-top: 20px;
     width: fit-content;
-    /* margin: 15px; */
     padding: 10px 15px;
     background-color: var(--primary-color);
     text-decoration: none;
@@ -101,4 +106,8 @@ header {
 
 .question-btn:hover {
     background-color: var(--secondary-color);
+}
+
+.hide {
+    display: none;
 }
